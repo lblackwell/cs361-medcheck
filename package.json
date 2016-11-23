@@ -1,0 +1,19 @@
+{
+  "name": "Project B",
+  "version": "1.0.0",
+  "description": "MedCheck",
+  "main": "Index.js",
+  "scripts": {
+    "start": "node Server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle De Laurell",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "express-session": "latest",
+    "path": "latest",
+    "sqllite": "latest"
+  }
+}
