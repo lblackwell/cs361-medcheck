@@ -1,0 +1,298 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/home/ubuntu/workspace/CS361/cs361-medcheck',
+5 verbose install   [ 'body-parser',
+5 verbose install     'cookie-parser',
+5 verbose install     'debug',
+5 verbose install     'express',
+5 verbose install     'hbs',
+5 verbose install     'consolidate',
+5 verbose install     'morgan',
+5 verbose install     'nodemon',
+5 verbose install     'serve-favicon',
+5 verbose install     'forms',
+5 verbose install     'path',
+5 verbose install     'sqlite3',
+5 verbose install     'sqllite' ] ]
+6 info preinstall cs361-medcheck@0.0.0
+7 warn package.json path@0.12.7 path is also the name of a node core module.
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping hbs@* /home/ubuntu/workspace/CS361/cs361-medcheck
+10 verbose already installed skipping consolidate@* /home/ubuntu/workspace/CS361/cs361-medcheck
+11 verbose already installed skipping morgan@~1.7.0 /home/ubuntu/workspace/CS361/cs361-medcheck
+12 verbose already installed skipping nodemon@^1.11.0 /home/ubuntu/workspace/CS361/cs361-medcheck
+13 verbose already installed skipping serve-favicon@~2.3.0 /home/ubuntu/workspace/CS361/cs361-medcheck
+14 verbose already installed skipping forms@^1.3.0 /home/ubuntu/workspace/CS361/cs361-medcheck
+15 verbose cache add [ 'path@latest', null ]
+16 verbose cache add name=undefined spec="path@latest" args=["path@latest",null]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'path@latest',
+17 verbose parsed url   path: 'path@latest',
+17 verbose parsed url   href: 'path@latest' }
+18 verbose already installed skipping sqlite3@^3.1.8 /home/ubuntu/workspace/CS361/cs361-medcheck
+19 verbose cache add name="path" spec="latest" args=["path","latest"]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'latest',
+20 verbose parsed url   path: 'latest',
+20 verbose parsed url   href: 'latest' }
+21 verbose addNamed [ 'path', 'latest' ]
+22 verbose addNamed [ null, null ]
+23 verbose cache add [ 'sqllite@latest', null ]
+24 verbose cache add name=undefined spec="sqllite@latest" args=["sqllite@latest",null]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: 'sqllite@latest',
+25 verbose parsed url   path: 'sqllite@latest',
+25 verbose parsed url   href: 'sqllite@latest' }
+26 silly lockFile cb38cb57-path-latest path@latest
+27 verbose lock path@latest /home/ubuntu/.npm/cb38cb57-path-latest.lock
+28 verbose cache add name="sqllite" spec="latest" args=["sqllite","latest"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: 'latest',
+29 verbose parsed url   path: 'latest',
+29 verbose parsed url   href: 'latest' }
+30 verbose addNamed [ 'sqllite', 'latest' ]
+31 verbose addNamed [ null, null ]
+32 silly lockFile c024ac65-sqllite-latest sqllite@latest
+33 verbose lock sqllite@latest /home/ubuntu/.npm/c024ac65-sqllite-latest.lock
+34 info addNameTag [ 'path', 'latest' ]
+35 info addNameTag [ 'sqllite', 'latest' ]
+36 verbose request where is /sqllite
+37 verbose request registry https://registry.npmjs.org/
+38 verbose request id 948c9c717ef78b96
+39 verbose url raw /sqllite
+40 verbose url resolving [ 'https://registry.npmjs.org/', './sqllite' ]
+41 verbose url resolved https://registry.npmjs.org/sqllite
+42 verbose request where is https://registry.npmjs.org/sqllite
+43 info trying registry request attempt 1 at 23:20:59
+44 http GET https://registry.npmjs.org/sqllite
+45 verbose cache add [ 'body-parser@latest', null ]
+46 verbose cache add name=undefined spec="body-parser@latest" args=["body-parser@latest",null]
+47 verbose parsed url { protocol: null,
+47 verbose parsed url   slashes: null,
+47 verbose parsed url   auth: null,
+47 verbose parsed url   host: null,
+47 verbose parsed url   port: null,
+47 verbose parsed url   hostname: null,
+47 verbose parsed url   hash: null,
+47 verbose parsed url   search: null,
+47 verbose parsed url   query: null,
+47 verbose parsed url   pathname: 'body-parser@latest',
+47 verbose parsed url   path: 'body-parser@latest',
+47 verbose parsed url   href: 'body-parser@latest' }
+48 verbose already installed skipping cookie-parser@~1.4.3 /home/ubuntu/workspace/CS361/cs361-medcheck
+49 verbose already installed skipping debug@~2.2.0 /home/ubuntu/workspace/CS361/cs361-medcheck
+50 verbose cache add [ 'express@latest', null ]
+51 verbose cache add name=undefined spec="express@latest" args=["express@latest",null]
+52 verbose parsed url { protocol: null,
+52 verbose parsed url   slashes: null,
+52 verbose parsed url   auth: null,
+52 verbose parsed url   host: null,
+52 verbose parsed url   port: null,
+52 verbose parsed url   hostname: null,
+52 verbose parsed url   hash: null,
+52 verbose parsed url   search: null,
+52 verbose parsed url   query: null,
+52 verbose parsed url   pathname: 'express@latest',
+52 verbose parsed url   path: 'express@latest',
+52 verbose parsed url   href: 'express@latest' }
+53 verbose cache add name="body-parser" spec="latest" args=["body-parser","latest"]
+54 verbose parsed url { protocol: null,
+54 verbose parsed url   slashes: null,
+54 verbose parsed url   auth: null,
+54 verbose parsed url   host: null,
+54 verbose parsed url   port: null,
+54 verbose parsed url   hostname: null,
+54 verbose parsed url   hash: null,
+54 verbose parsed url   search: null,
+54 verbose parsed url   query: null,
+54 verbose parsed url   pathname: 'latest',
+54 verbose parsed url   path: 'latest',
+54 verbose parsed url   href: 'latest' }
+55 verbose addNamed [ 'body-parser', 'latest' ]
+56 verbose addNamed [ null, null ]
+57 silly lockFile 88319797-body-parser-latest body-parser@latest
+58 verbose lock body-parser@latest /home/ubuntu/.npm/88319797-body-parser-latest.lock
+59 verbose cache add name="express" spec="latest" args=["express","latest"]
+60 verbose parsed url { protocol: null,
+60 verbose parsed url   slashes: null,
+60 verbose parsed url   auth: null,
+60 verbose parsed url   host: null,
+60 verbose parsed url   port: null,
+60 verbose parsed url   hostname: null,
+60 verbose parsed url   hash: null,
+60 verbose parsed url   search: null,
+60 verbose parsed url   query: null,
+60 verbose parsed url   pathname: 'latest',
+60 verbose parsed url   path: 'latest',
+60 verbose parsed url   href: 'latest' }
+61 verbose addNamed [ 'express', 'latest' ]
+62 verbose addNamed [ null, null ]
+63 silly lockFile c30a01ab-express-latest express@latest
+64 verbose lock express@latest /home/ubuntu/.npm/c30a01ab-express-latest.lock
+65 verbose request where is /path
+66 verbose request registry https://registry.npmjs.org/
+67 verbose url raw /path
+68 verbose url resolving [ 'https://registry.npmjs.org/', './path' ]
+69 verbose url resolved https://registry.npmjs.org/path
+70 verbose request where is https://registry.npmjs.org/path
+71 info trying registry request attempt 1 at 23:20:59
+72 verbose etag W/"5830bac9-163b"
+73 http GET https://registry.npmjs.org/path
+74 info addNameTag [ 'body-parser', 'latest' ]
+75 info addNameTag [ 'express', 'latest' ]
+76 verbose request where is /body-parser
+77 verbose request registry https://registry.npmjs.org/
+78 verbose url raw /body-parser
+79 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+80 verbose url resolved https://registry.npmjs.org/body-parser
+81 verbose request where is https://registry.npmjs.org/body-parser
+82 info trying registry request attempt 1 at 23:20:59
+83 verbose etag W/"5839c362-1dcb5"
+84 http GET https://registry.npmjs.org/body-parser
+85 verbose request where is /express
+86 verbose request registry https://registry.npmjs.org/
+87 verbose url raw /express
+88 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+89 verbose url resolved https://registry.npmjs.org/express
+90 verbose request where is https://registry.npmjs.org/express
+91 info trying registry request attempt 1 at 23:20:59
+92 verbose etag W/"5839d57e-850ff"
+93 http GET https://registry.npmjs.org/express
+94 http 304 https://registry.npmjs.org/body-parser
+95 silly registry.get cb [ 304,
+95 silly registry.get   { date: 'Sat, 26 Nov 2016 23:20:59 GMT',
+95 silly registry.get     via: '1.1 varnish',
+95 silly registry.get     'cache-control': 'max-age=300',
+95 silly registry.get     etag: 'W/"5839c362-1dcb5"',
+95 silly registry.get     age: '76',
+95 silly registry.get     connection: 'keep-alive',
+95 silly registry.get     'x-served-by': 'cache-ord1724-ORD',
+95 silly registry.get     'x-cache': 'HIT',
+95 silly registry.get     'x-cache-hits': '1',
+95 silly registry.get     'x-timer': 'S1480202459.399678,VS0,VE0',
+95 silly registry.get     vary: 'Accept-Encoding' } ]
+96 verbose etag https://registry.npmjs.org/body-parser from cache
+97 http 304 https://registry.npmjs.org/express
+98 silly registry.get cb [ 304,
+98 silly registry.get   { date: 'Sat, 26 Nov 2016 23:20:59 GMT',
+98 silly registry.get     via: '1.1 varnish',
+98 silly registry.get     'cache-control': 'max-age=300',
+98 silly registry.get     etag: 'W/"5839d57e-850ff"',
+98 silly registry.get     age: '76',
+98 silly registry.get     connection: 'keep-alive',
+98 silly registry.get     'x-served-by': 'cache-ord1727-ORD',
+98 silly registry.get     'x-cache': 'HIT',
+98 silly registry.get     'x-cache-hits': '1',
+98 silly registry.get     'x-timer': 'S1480202459.408764,VS0,VE0',
+98 silly registry.get     vary: 'Accept-Encoding' } ]
+99 verbose etag https://registry.npmjs.org/express from cache
+100 verbose addNamed [ 'body-parser', '1.15.2' ]
+101 verbose addNamed [ '1.15.2', '1.15.2' ]
+102 silly lockFile 8e8303b7-body-parser-1-15-2 body-parser@1.15.2
+103 verbose lock body-parser@1.15.2 /home/ubuntu/.npm/8e8303b7-body-parser-1-15-2.lock
+104 verbose addNamed [ 'express', '4.14.0' ]
+105 verbose addNamed [ '4.14.0', '4.14.0' ]
+106 silly lockFile 1f01dc17-express-4-14-0 express@4.14.0
+107 verbose lock express@4.14.0 /home/ubuntu/.npm/1f01dc17-express-4-14-0.lock
+108 silly lockFile 8e8303b7-body-parser-1-15-2 body-parser@1.15.2
+109 silly lockFile 8e8303b7-body-parser-1-15-2 body-parser@1.15.2
+110 silly lockFile 88319797-body-parser-latest body-parser@latest
+111 silly lockFile 88319797-body-parser-latest body-parser@latest
+112 silly lockFile 1f01dc17-express-4-14-0 express@4.14.0
+113 silly lockFile 1f01dc17-express-4-14-0 express@4.14.0
+114 silly lockFile c30a01ab-express-latest express@latest
+115 silly lockFile c30a01ab-express-latest express@latest
+116 info already installed body-parser@1.15.2
+117 info already installed express@4.14.0
+118 http 304 https://registry.npmjs.org/path
+119 silly registry.get cb [ 304,
+119 silly registry.get   { date: 'Sat, 26 Nov 2016 23:20:59 GMT',
+119 silly registry.get     via: '1.1 varnish',
+119 silly registry.get     'cache-control': 'max-age=300',
+119 silly registry.get     etag: 'W/"5830bac9-163b"',
+119 silly registry.get     age: '0',
+119 silly registry.get     connection: 'keep-alive',
+119 silly registry.get     'x-served-by': 'cache-ord1723-ORD',
+119 silly registry.get     'x-cache': 'HIT',
+119 silly registry.get     'x-cache-hits': '1',
+119 silly registry.get     'x-timer': 'S1480202459.400099,VS0,VE115',
+119 silly registry.get     vary: 'Accept-Encoding' } ]
+120 verbose etag https://registry.npmjs.org/path from cache
+121 verbose addNamed [ 'path', '0.12.7' ]
+122 verbose addNamed [ '0.12.7', '0.12.7' ]
+123 silly lockFile 423c0001-path-0-12-7 path@0.12.7
+124 verbose lock path@0.12.7 /home/ubuntu/.npm/423c0001-path-0-12-7.lock
+125 silly lockFile 423c0001-path-0-12-7 path@0.12.7
+126 silly lockFile 423c0001-path-0-12-7 path@0.12.7
+127 silly lockFile cb38cb57-path-latest path@latest
+128 silly lockFile cb38cb57-path-latest path@latest
+129 info already installed path@0.12.7
+130 http 404 https://registry.npmjs.org/sqllite
+131 silly registry.get cb [ 404,
+131 silly registry.get   { 'content-type': 'application/json',
+131 silly registry.get     'cache-control': 'max-age=0',
+131 silly registry.get     'content-length': '2',
+131 silly registry.get     'accept-ranges': 'bytes',
+131 silly registry.get     date: 'Sat, 26 Nov 2016 23:20:59 GMT',
+131 silly registry.get     via: '1.1 varnish',
+131 silly registry.get     age: '0',
+131 silly registry.get     connection: 'keep-alive',
+131 silly registry.get     'x-served-by': 'cache-ord1725-ORD',
+131 silly registry.get     'x-cache': 'MISS',
+131 silly registry.get     'x-cache-hits': '0',
+131 silly registry.get     'x-timer': 'S1480202459.406899,VS0,VE150',
+131 silly registry.get     vary: 'Accept-Encoding' } ]
+132 silly lockFile c024ac65-sqllite-latest sqllite@latest
+133 silly lockFile c024ac65-sqllite-latest sqllite@latest
+134 error 404 Not Found
+134 error 404
+134 error 404 'sqllite' is not in the npm registry.
+134 error 404 You should bug the author to publish it
+134 error 404 It was specified as a dependency of 'cs361-medcheck'
+134 error 404
+134 error 404 Note that you can also install from a
+134 error 404 tarball, folder, or http url, or git url.
+135 error System Linux 4.2.0-c9
+136 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "install"
+137 error cwd /home/ubuntu/workspace/CS361/cs361-medcheck
+138 error node -v v0.10.35
+139 error npm -v 1.4.28
+140 error code E404
+141 verbose exit [ 1, true ]
