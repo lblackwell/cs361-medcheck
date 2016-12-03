@@ -11,9 +11,23 @@ chai.use(chaiHttp);
 // Check that a correct username/password grants access
 
 // Check that an incorrect password blocks access
+describe('/POST login', () => {
+	it('it should not allow a login with an incorrect password', (done) => {
+		let login = {
+			username: "testuser",
+			password: "incorrect"
+		}
+	chai.request(server).post('/user').send(login).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('password');
+		res.body.errors.password.should.have.property('kind').eql('incorrect');
+		done();
+		});
+	});
 
 // Check that a blank password blocks access
-describe('/POST login', () => {
 	it('it should not POST a login without password entered', (done) => {
 		let login = {
 			username: "testuser"
@@ -25,7 +39,7 @@ describe('/POST login', () => {
 		res.body.errors.should.have.property('password');
 		res.body.errors.password.should.have.property('kind').eql('required');
 		done();
-	});
+		});
 	});
 });
 
