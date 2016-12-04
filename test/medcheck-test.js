@@ -56,6 +56,21 @@ describe('/POST login', () => {
 		});
 	});
 
+	// Blank username blocks access
+	it('should not POST a login without username entered', (done) => {
+		let login = {
+			password: "password"
+		}
+	chai.request(server).post('/user').send(login).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('username');
+		res.body.errors.username.should.have.property('kind').eql('required');
+		done();
+		});
+	});
+
 	// Non-registered username blocks access
 	it('should not allow a login with a non-registered username', (done) => {
 		let login = {
