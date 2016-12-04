@@ -9,8 +9,9 @@ chai.use(chaiHttp);
 
 // Login //////////////////////////////////////////////
 describe('/POST login', () => {
+
 	// Correct username/password grants access
-	it('it should POST a login with correct username and password', (done) => {
+	it('should POST a login with correct username and password', (done) => {
 		let login = {
 			username: "testuser",
 			password: "password"
@@ -25,7 +26,7 @@ describe('/POST login', () => {
 	});
 
 	// Incorrect password blocks access
-	it('it should not allow a login with an incorrect password', (done) => {
+	it('should not allow a login with an incorrect password', (done) => {
 		let login = {
 			username: "testuser",
 			password: "incorrect"
@@ -41,7 +42,7 @@ describe('/POST login', () => {
 	});
 
 	// Blank password blocks access
-	it('it should not POST a login without password entered', (done) => {
+	it('should not POST a login without password entered', (done) => {
 		let login = {
 			username: "testuser"
 		}
@@ -56,7 +57,7 @@ describe('/POST login', () => {
 	});
 
 	// Non-registered username blocks access
-	it('it should not allow a login with a non-registered username', (done) => {
+	it('should not allow a login with a non-registered username', (done) => {
 		let login = {
 			username: "incorrect",
 			password: "password"
@@ -70,14 +71,52 @@ describe('/POST login', () => {
 		done();
 		});
 	})
-
 });
 
 
 // Search /////////////////////////////////////////////
+describe('/GET search', () => {
 
 	// Search does not execute without a term entered
+	it('should not GET search results without a search term entered', (done) => {
+		let search = {}
+	chai.request(server).get('/search').send(search).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('term');
+		res.body.errors.term.should.have.property('kind').eql('required');
+		done();
+		});
+	});
 
 	// Search with matching term returns appropriate match
+	it('should GET search results with a matching search term', (done) => {
+		let search = {
+			term: "testdrug"
+		}
+	chai.request(server).get('/search').send(search).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('message').eql('1 result found.');
+		res.body.search.should.have.property('drugname');
+		done();
+		});
+	});
 
 	// Search without matching term returns nothing
+	it('should not GET search results without matching search term', (done) => {
+		let search = {
+			term: "nonexistent drug"
+		}
+	chai.request(server).get('/search').send(search).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('term');
+		res.body.errors.term.should.have.property('kind').eql('not found');
+		done();
+		});
+	});
+
+});
