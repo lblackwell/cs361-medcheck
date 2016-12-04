@@ -133,5 +133,75 @@ describe('/GET search', () => {
 		done();
 		});
 	});
+});
 
+
+// Submit new side effect //////////////////////////////
+describe('/POST effect', () => {
+
+	// New side effect should not be submitted without a medication name
+	it('should not POST new side effect without a medication name entered', (done) => {
+		let newEffect = {
+			effect: "headache",
+			severity: 1
+		}
+	chai.request(server).post('/effect').send(newEffect).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('medication');
+		res.body.errors.medication.should.have.property('kind').eql('required');
+		done();
+		});
+	});
+
+	// New side effect should not be submitted without a description
+	it('should not POST new side effect without an effect description', (done) => {
+		let newEffect = {
+			medication: "testmedication",
+			severity: 1
+		}
+	chai.request(server).post('/effect').send(newEffect).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('effect');
+		res.body.errors.effect.should.have.property('kind').eql('required');
+		done();
+		});
+	});
+
+	// Side effect should only be submitted once per medication
+	it('should not POST new side effect if it already exists for that medication', (done) => {
+		let newEffect = {
+			medication: "testmedication",
+			effect: "testeffect",
+			severity: 1
+		}
+	chai.request(server).post('/effect').send(newEffect).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('effect');
+		res.body.errors.effect.should.have.property('kind').eql('already exists');
+		done();
+		});
+	});
+
+	// Side effect should not be submitted for an unlisted medication
+	it('should not POST new side effect for an unlisted medication', (done) => {
+		let newEffect = {
+			effect: "headache",
+			medication: "nonexistent",
+			severity: 1
+		}
+	chai.request(server).post('/effect').send(newEffect).end((err, res) => {
+		res.should.have.status(200);
+		res.body.should.be.a('object');
+		res.body.should.have.property('errors');
+		res.body.errors.should.have.property('medication');
+		res.body.errors.medication.should.have.property('kind').eql('not listed');
+		done();
+		});
+	});
 });
