@@ -5,6 +5,12 @@ var mustache = require('mustache');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var pool = mySQL.createPool({
+  host  : 'localhost',
+  user  : 'student',
+  password: 'default',
+  database: 'student'
+})
 
 var engines = require('consolidate');
 
@@ -29,6 +35,31 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
+});
+
+//add user to database
+app.post('/addUser', function(req, res, next){
+  var context = {};
+  pool.query("INSERT INTO med_user SET ?", req.body, function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+      context.results = rows;
+      res.send(rows);
+    });
+});
+
+app.get('/searchMedication', function(req, res, next){
+  var context = {};
+    pool.query('SELECT * FROM med_medication WHERE id = ?', req.body, function(err, rows, fields){
+      if(err){
+        next(err);
+        return;
+      }
+      context.results = rows;
+      res.send(rows);
+    });
 });
 
 // error handler
