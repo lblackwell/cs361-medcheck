@@ -15,15 +15,14 @@ var pg = require('pg');
 // note: all config is optional and the environment variables
 // will be read if the config is not present
 var config = {
-  user: 'postgres', //env var: PGUSER
-  database: 'medcheck', //env var: PGDATABASE
-  password: 'password', //env var: PGPASSWORD
-  host: '0.0.0.0', // Server hosting the postgres database
+  user: 'piuxynovzcwmfj', //env var: PGUSER
+  database: 'd9i54mcrcf0gs8', //env var: PGDATABASE
+  password: 'T1mPN_KNbbWZsNcbo0RVdRckdQ', //env var: PGPASSWORD
+  host: 'ec2-23-21-220-188.compute-1.amazonaws.com', // Server hosting the postgres database
   //port: 5432, //env var: PGPORT
   max: 10, // max number of clients in the pool
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };
-
 
 //this initializes a connection pool
 //it will keep idle connections open for a 30 seconds
