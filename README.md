@@ -18,7 +18,7 @@ Please use vagrant to test this project.
 
 6. To start the application, run `npm run dev` or `PGPASSWORD=password npm run dev`
 
-7. Check the application at `http://localhost:3000`
+7. Check the application at `http://localhost:7000`
 
 To run unit tests:
 - In project directory, run `mocha --recursive`
