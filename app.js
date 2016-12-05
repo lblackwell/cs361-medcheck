@@ -10,7 +10,7 @@ var pool = mySQL.createPool({
   user  : 'student',
   password: 'default',
   database: 'student'
-})
+});
 
 var engines = require('consolidate');
 
