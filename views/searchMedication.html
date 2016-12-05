@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MedChecker</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+
+<body>
+<h2>Search Medications</h2>
+<form action="" class="form-search">
+  <input type="text">
+  <button type="button" class="btn" onclick="sendSearch()">Search</button>
+</form>
+
+
+
+<script>
+function sendSearch(){
+var newTable = document.createElement("table");
+newTable.id = "t01";
+newTable.class = "table table-striped";
+newHeader(newTable);
+var req = new XMLHttpRequest();
+req.open("GET", "/searchMedication", true);
+req.addEventListener('load',function(){
+      if(req.status >= 200 && req.status < 400){
+        var response = JSON.parse(req.responseText);
+        console.log(response);
+        for(i = 0; i <= response.length; i++){
+          newDataRow(newTable,response[i].id, response[i].name, response[i].under_recall);
+        }
+        document.body.appendChild(newTable);
+      } else {
+        console.log("Error in network request: " + request.statusText);
+}});
+req.send(null);
+}
+
+function newDataRow(newTable2, newId, newName, newUnderRecall){
+  var newLine = document.createElement("tr");
+  newLine.id = newId;
+  var newBox = document.createElement("td");
+  newBox.textContent = newId;
+  newBox.style.border = "thin solid black";
+  newLine.appendChild(newBox);
+  var newBox = document.createElement("td");
+  newBox.textContent = newName;
+  newBox.style.border = "thin solid black";
+  newLine.appendChild(newBox);
+  var newBox = document.createElement("td");
+  newBox.textContent = newUnderRecall;
+  newBox.style.border = "thin solid black";
+  newLine.appendChild(newBox);
+  newTable2.appendChild(newLine);
+}
+
+function newHeader(newTable2){
+  var newHead = document.createElement("th");
+  newHead.textContent = "Medication ID";
+  newHead.style="visibility:hidden";
+  newHead.style.border = "thin solid black";
+  newTable2.appendChild(newHead);
+  var newHead = document.createElement("th");
+  newHead.textContent = "Medication Name";
+  newHead.style.border = "thin solid black";
+  newTable2.appendChild(newHead);
+  var newHead = document.createElement("th");
+  newHead.textContent = "Under Recall";
+  newHead.style.border = "thin solid black";
+  newTable2.appendChild(newHead);
+}
+
+</script>
+
+</body>
