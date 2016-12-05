@@ -51,15 +51,14 @@ Vagrant.configure("2") do |config|
      apt-get install -y nodejs
      apt-get install -y npm postgresql sqlite3 sqlite3-dev nginx vim
 
-     su postgres -c 'createuser vagrant --createdb'
+     su postgres -c 'createdb medcheck --owner=postgres'
 
-     su postgres -c 'createdb medcheck --owner=vagrant'
      su postgres -c "psql -c \"ALTER USER postgres WITH PASSWORD 'password';\""
 
      npm install nodemon -g
    SHELL
 
-  config.vm.network :forwarded_port, guest: 80, host: 3080
+  config.vm.network :forwarded_port, guest: 3000, host: 7000
 
   config.vm.synced_folder ".", "/vagrant", id: "vagrant-root"
 end
