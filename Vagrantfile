@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
      sudo apt-get install -y build-essential
 
      curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-     apt-get install -y nodejs
+     apt-get install -y nodejs-legacy
      apt-get install -y npm postgresql sqlite3 sqlite3-dev nginx vim
 
      su postgres -c 'createdb medcheck --owner=postgres'
