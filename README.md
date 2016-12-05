@@ -1,5 +1,7 @@
 # cs361-medcheck
 
+Web demo: https://cs361-medcheck.herokuapp.com/
+
 
 To set up project:
 
