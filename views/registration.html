@@ -9,29 +9,35 @@
 
 <body>
   <h1>Register User</h1>
-  <form action="/addUser" class="form-horizontal">
+  <form method="post" action="/add" class="form-horizontal">
+      <div class="control-group">
+      <label class="control-label" for="input_username">Username</label>
+      <div class="controls">
+        <input type="text" id="input_username" name="username" placeholder="Username">
+      </div>
+    </div>
     <div class="control-group">
       <label class="control-label" for="input_first_name">First Name</label>
       <div class="controls">
-        <input type="text" id="input_first_name" placeholder="First Name">
+        <input type="text" id="input_first_name" name="first_name" placeholder="First Name">
       </div>
     </div>
     <div class="control-group">
       <label class="control-label" for="input_last_name">Last Name</label>
       <div class="controls">
-        <input type="password" id="input_last_name" placeholder="Last Name">
+        <input type="text" id="input_last_name" name="last_name" placeholder="Last Name">
       </div>
     </div>
     <div class="control-group">
       <label class="control-label" for="input_email">Email</label>
       <div class="controls">
-        <input type="password" id="input_email" placeholder="Email">
+        <input type="text" id="input_email" name="email" placeholder="Email">
       </div>
     </div>
     <div class="control-group">
       <label class="control-label" for="input_password">Password</label>
       <div class="controls">
-        <input type="password" id="input_password" placeholder="Password">
+        <input type="password" id="input_password" name="password" placeholder="Password">
       </div>
     </div>
     <div class="control-group">

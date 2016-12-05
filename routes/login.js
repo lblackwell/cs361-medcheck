@@ -18,8 +18,8 @@ var reg_form = forms.create({
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {
-    console.log("WE GOING!");
-    res.sendfile('./views/login.html');
+    console.log("HERE!!");
+    res.sendfile('./views/UserSignIn.html');
 });
 
 module.exports = router;

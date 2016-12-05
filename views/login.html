@@ -3,22 +3,34 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>MedCheck</title>
+  <title>MedChecker</title>
 </head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
 
 <body>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 class="text-center">Log In Below</h1>
-      </div>
+<h2>User Sign In</h2>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+      <input type="text" id="email" placeholder="Email">
     </div>
   </div>
+  <div class="control-group">
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      <input type="password" id="password" placeholder="Password">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+      <button type="submit" class="btn">Sign in</button>
+      <button type="button" class="btn"><a href="/registration">Register</a></button>
+    </div>
+  </div>
+</form>
 
 </body>
-
-</html>
