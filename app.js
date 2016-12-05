@@ -57,8 +57,9 @@ app.get('/searchMedication', function(req, res, next){
         next(err);
         return;
       }
-      context.results = rows;
-      res.send(rows);
+      context.results = JSON.stringify(rows);
+      res.type('json');
+      res.send(context.results);
     });
 });
 
