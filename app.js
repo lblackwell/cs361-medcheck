@@ -79,6 +79,28 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.route('/login')
   .get(function(req, res) {
     res.sendfile('./views/login.html');
+  })
+  .post(function(req, res) {
+    pool.connect(function(err, client, done) {
+      if (err) {
+        return console.error('error fetching client from pool', err);
+      }
+      client.query("SELECT * FROM med_user WHERE email = $1 AND password = $2", [req.body.email, req.body.password], function(err, result) {
+        //call `done()` to release the client back to the pool
+        done();
+
+        if (err) {
+          return console.error('error running query', err);
+        }
+
+        if(result.rows.length > 0){
+          res.sendfile('./views/med.html');
+        }else{
+          res.render('error');
+        }
+      });
+    });
+
   });
 
 app.route('/registration')
@@ -99,12 +121,15 @@ app.route('/add')
         if (err) {
           return console.error('error running query', err);
         }
-        
+
         res.sendfile('./views/login.html');
       });
     });
-    
+
   });
+
+
+
 
 
 // catch 404 and forward to error handler
@@ -114,30 +139,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-//add user to database
-// app.route('/add').post(function(req, res, next) {
-//   console.log("YOOOO");
-//   // to run a query we can acquire a client from the pool,
-//   // run a query on the client, and then return the client to the pool
-//   pool.connect(function(err, client, done) {
-//     if (err) {
-//       return console.error('error fetching client from pool', err);
-//     }
-//     client.query("INSERT INTO med_user SET ?", req.body, function(err, result) {
-//       //call `done()` to release the client back to the pool
-//       done();
-
-//       if (err) {
-//         return console.error('error running query', err);
-//       }
-//       console.log(result.rows[0].number);
-//       //output: 1
-//     });
-//   });
-
-
-
-// });
 
 app.get('/search', function(req, res, next) {
 

@@ -9,17 +9,17 @@
 
 <body>
 <h2>User Sign In</h2>
-<form class="form-horizontal">
+<form class="form-horizontal" method="post" action="/login">
   <div class="control-group">
     <label class="control-label" for="email">Email</label>
     <div class="controls">
-      <input class="form-control" type="text" id="email" placeholder="Email">
+      <input class="form-control" type="text" id="email" name="email" placeholder="Email">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="password">Password</label>
     <div class="controls">
-      <input class="form-control" type="password" id="password" placeholder="Password">
+      <input class="form-control" type="password" id="password" name="password" placeholder="Password">
     </div>
   </div>
   <div class="control-group">
